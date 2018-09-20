@@ -20,14 +20,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NoteActivity"
-            android:label="@string/title_activity_note"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="be.ap.karima.simpleapp.MainActivity" />
-        </activity>
+            android:name=".NamesActivity"
+            android:label="@string/title_activity_names"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

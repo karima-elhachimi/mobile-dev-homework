@@ -1,5 +1,6 @@
 package be.ap.karima.simpleapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn;
+    private Button namesBtn;
     private TextInputEditText inputTxt;
     private TextView txt;
 
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         btn = (Button) findViewById(R.id.saveNameBtn);
+        namesBtn = (Button) findViewById(R.id.goToNamesBtn);
         inputTxt = (TextInputEditText) findViewById(R.id.nameInputTxt);
         txt = (TextView) findViewById(R.id.greetingTxt);
 
@@ -44,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 saveName(view);
 
+            }
+        });
+
+        namesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToNames(view);
             }
         });
     }
@@ -76,5 +86,10 @@ public class MainActivity extends AppCompatActivity {
         Snackbar.make(view, "Thanks for inputting your name "+ enteredName + "!", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
 
+    }
+
+    public void goToNames(View view) {
+        Intent intent = new Intent(this, NamesActivity.class);
+        this.startActivity(intent);
     }
 }
